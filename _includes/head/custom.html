@@ -14,12 +14,47 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
-<!-- Custom CSS for slight name adjustment -->
+<!-- Custom CSS modifications -->
 <style>
-  /* Add a little left padding to author name */
-  @media (min-width: 1024px) {
-    .author__name {
-      padding-left: 35px !important;  /* 只是在左边添加一点空格 */
+  #theme-toggle {
+    display: none !important;
+  }
+  
+  @media (min-width: 925px) {
+    .page {
+      /* 从 span(10 of 12) 改为更宽的布局 */
+      width: 85% !important;  /* 使用更大的宽度 */
+      margin-left: 18% !important;  /* 调整左边距以适应sidebar */
+    }
+    
+    #main {
+      max-width: 1600px !important;  /* 增加最大宽度 */
     }
   }
+  
+  /* 3. 简单的名字左边距调整 */
+  @media (min-width: 1024px) {
+    .author__name {
+      padding-left: 35px !important;  /* 保持你喜欢的35px */
+    }
+  }
+  
+  /* 4. 字号调整示例 - 你可以根据需要修改这些值 */
+  .page__content p {
+    font-size: 0.9em !important;  /* 稍微增大正文字号 */
+  }
+  
+  .page__content h1 {
+    font-size: 1.6em !important;  /* 调整h1字号 */
+  }
+  
+  .page__content h2 {
+    font-size: 1.2em !important;  /* 调整h2字号 */
+  }
+  
+  .page__content li {
+    font-size: 0.9em !important;  /* 调整列表字号 */
+  }
 </style>
+
+<!-- end custom head snippets -->
