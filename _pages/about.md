@@ -15,4 +15,4 @@ Prior to this, I received my PhD from Nanyang Technological University in 2025, 
 - **Speech Processing**: Speech Recognition / Separation / Enhancement, Text-to-Speech Synthesis.
 - **Reinforcement Learning**: RLHF Alignment, RL in Robotics.
 
-I have some [publications](https://scholar.google.com/citations?user=uUmSp1QAAAAJ) based on these topics. I also enjoy contributing back to the academic community by reviewing main AI conference papers or serving as Area Chair (e.g., ICLR). Additionally, feel free to reach out if you're interested in discussing potential collaborations.
+I have some [publications](https://scholar.google.com/citations?user=uUmSp1QAAAAJ) based on these topics. I also enjoy contributing back to the academic community by reviewing main AI conference papers or serving as a Area Chair (e.g., ICLR). Additionally, feel free to reach out if you're interested in discussing potential collaborations.
