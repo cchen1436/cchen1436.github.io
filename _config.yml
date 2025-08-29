@@ -24,8 +24,8 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : #"Chen Chen (陈晨)"
-  pronouns         : "(What you see may differ with reality)"  
-  bio              : "Senior Research Scientist"
+  pronouns         : "(May be less filtered in real life)"  
+  bio              : #"Senior Research Scientist"
   location         : "California, USA"
   employer         : "NVIDIA"
   uri              : # URL
