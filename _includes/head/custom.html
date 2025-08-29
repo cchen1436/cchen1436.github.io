@@ -14,4 +14,24 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
-<!-- end custom head snippets -->
+<!-- Custom CSS for author name positioning -->
+<style>
+  /* Make author name closer to avatar and center it */
+  @media (min-width: 1024px) {
+    .author__name {
+      margin-top: 5px !important;  /* 减少顶部间距 */
+      margin-bottom: 5px !important;
+      text-align: center !important;  /* 居中对齐 */
+    }
+    
+    .author__content {
+      text-align: center !important;  /* 确保内容区域居中 */
+    }
+    
+    .author__pronouns {
+      text-align: center !important;  /* 也让pronouns居中 */
+      margin-top: 2px !important;
+      margin-bottom: 8px !important;
+    }
+  }
+</style>
