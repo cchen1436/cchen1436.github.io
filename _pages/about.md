@@ -17,5 +17,5 @@ My research topics are:
 - **Speech Processing**: Speech Recognition / Separation / Enhancement, Text-to-Speech Synthesis.
 - **Reinforcement Learning**: RLHF Alignment, RL in Robotics.
 
-I have some [publications](https://scholar.google.com/citations?user=uUmSp1QAAAAJ) in main AI conferences and actively contribute to the academic community by serving as a reviewer and Area Chair (ICLR). Additionally, feel free to reach out if you're interested in collaborating or discussing these topics.
+I have some [publications](https://scholar.google.com/citations?user=uUmSp1QAAAAJ) in main AI conferences and actively contribute to the academic community by serving as a reviewer and a Area Chair for ICLR. Additionally, feel free to reach out if you're interested in collaborating or discussing these topics.
 
