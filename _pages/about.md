@@ -7,7 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a researcher from NVIDIA. Prior to this, I received my PhD from Nanyang Technological University, luckily advised by Prof. [Chng Eng-Siong](https://scholar.google.com/citations?user=FJodrCcAAAAJ&hl=en).
+I am currently a researcher at NVIDIA. 
+
+Prior to this, I received my PhD from Nanyang Technological University, luckily advised by Prof. [Chng Eng-Siong](https://scholar.google.com/citations?user=FJodrCcAAAAJ&hl=en).
+
 
 
 A data-driven personal website
