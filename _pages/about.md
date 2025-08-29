@@ -15,5 +15,5 @@ Prior to this, I received my PhD from Nanyang Technological University in 2025, 
 My research topics are: 
 - **Auditory LLMs**: Full-duplex Spoken Dialogue System, Audio-text Foundation Models.
 - **Speech Processing**: Speech Recognition / Separation / Enhancement, Text-to-Speech Synthesis.
-- **Reinforcement Learning**: RLHF, RL in Robotics.
+- **Reinforcement Learning**: RLHF Alignment, RL in Robotics.
 
