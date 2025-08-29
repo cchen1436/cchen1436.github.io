@@ -25,9 +25,9 @@ author:
   avatar           : "images/profile.jpg"
   name             : #"Chen Chen (陈晨)"
   pronouns         : "(May be less filtered in real life)"  
-  bio              : # ""
+  bio              : "Senior Research Scientist"
   location         : "California, USA"
-  employer         : "NVIDIA"
+  # employer         :  "NVIDIA"
   uri              : # URL
   email            : "cchen1@nvidia.com" 
 
