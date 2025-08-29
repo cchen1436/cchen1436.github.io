@@ -21,6 +21,11 @@
     display: none !important;
   }
   
+  /* 1.5. 让CC Homepage向左偏移 - 使用更具体的选择器 */
+  .greedy-nav .visible-links li:first-child a {
+    margin-left: -10px !important;  /* 向左偏移 */
+  }
+  
   /* 2. 左侧名字的间距调整 */
   @media (min-width: 1024px) {
     .author__name {
@@ -29,26 +34,41 @@
     
     /* 增加 pronouns 和联系信息之间的距离 */
     .author__pronouns {
-      margin-bottom: 25px !important;  /* 增加底部间距 */
+      margin-bottom: 25px !important;
     }
   }
   
-  /* 3. 轻微增加主内容宽度 - 保守的修改 */
+  /* 3. 轻微增加主内容宽度 */
   @media (min-width: 925px) {
     #main {
-      max-width: 1400px !important;  /* 适度增加最大宽度 */
+      max-width: 1400px !important;
     }
   }
-  .masthead__menu-item--lg a {
-  padding-left: 25px !important;  /* 让CC Homepage向左偏移15px */
-  }
+  
   /* 4. 字号调整 */
   .page__content p {
-    font-size: 0.95em !important;  /* 稍微增大正文 */
+    font-size: 0.95em !important;
   }
   
   .page__content li {
-    font-size: 0.95em !important;  /* 稍微增大列表 */
+    font-size: 0.95em !important;
+  }
+  
+  /* 5. Markdown中字体大小的自定义类 */
+  .small-text {
+    font-size: 0.85em !important;
+  }
+  
+  .medium-text {
+    font-size: 0.95em !important;
+  }
+  
+  .large-text {
+    font-size: 1.15em !important;
+  }
+  
+  .tiny-text {
+    font-size: 0.75em !important;
   }
 </style>
 
