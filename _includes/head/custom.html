@@ -21,11 +21,19 @@
     display: none !important;
   }
   
-  /* 1.5. 让CC Homepage向左偏移 */
-  .greedy-nav .visible-links li:first-child a {
-    margin-left: -25px !important;
+  /* 1.5. 让CC Homepage向左偏移 - 只在大屏幕上生效 */
+  @media (min-width: 768px) {
+    .greedy-nav .visible-links li:first-child a {
+      margin-left: -25px !important;
+    }
   }
   
+  /* 移动设备上保持正常间距 */
+  @media (max-width: 767px) {
+    .greedy-nav .visible-links li:first-child a {
+      margin-left: 0 !important;  /* 移动设备上不偏移 */
+    }
+  }
   /* 2. 左侧名字的间距调整 */
   @media (min-width: 1024px) {
     .author__name {
