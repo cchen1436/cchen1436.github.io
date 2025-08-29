@@ -7,7 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-======
 
 I am currently a researcher at NVIDIA. 
 
