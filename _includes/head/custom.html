@@ -21,9 +21,9 @@
     display: none !important;
   }
   
-  /* 1.5. 让CC Homepage向左偏移 - 使用更具体的选择器 */
+  /* 1.5. 让CC Homepage向左偏移 */
   .greedy-nav .visible-links li:first-child a {
-    margin-left: -20px !important;  /* 向左偏移 */
+    margin-left: -10px !important;
   }
   
   /* 2. 左侧名字的间距调整 */
@@ -69,6 +69,22 @@
   
   .tiny-text {
     font-size: 0.75em !important;
+  }
+  
+  /* 6. 完全删除底部footer */
+  .page__footer-follow,
+  .page__footer-copyright {
+    display: none !important;
+  }
+  
+  /* 删除footer的灰色背景 */
+  .page__footer {
+    display: none !important;
+  }
+  
+  /* 调整body的底部padding，因为不再需要给footer留空间 */
+  body {
+    padding-bottom: 2em !important;  /* 减少底部padding */
   }
 </style>
 
