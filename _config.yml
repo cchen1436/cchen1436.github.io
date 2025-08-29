@@ -23,9 +23,9 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "images/profile.jpg"
-  name             : #"Chen Chen (陈晨)"
+  name             : "Chen Chen (陈晨)"
   pronouns         : "(May be less filtered in real life)"  
-  bio              : "Senior Research Scientist"
+  bio              : #""
   location         : "California, USA"
   # employer         :  "NVIDIA"
   uri              : # URL
