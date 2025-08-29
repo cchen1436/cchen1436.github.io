@@ -21,65 +21,32 @@
     display: none !important;
   }
   
-  /* 2. 确保顶部标题保持在原位置 */
-  .masthead {
-    /* 保持masthead不受影响 */
-    position: relative !important;
-  }
-  
-  .masthead__menu-item--lg {
-    /* 确保CC Homepage保持在左边 */
-    margin-right: auto !important;
-  }
-  
-  /* 3. 只增加主内容区域的宽度 */
-  @media (min-width: 925px) {
-    .page {
-      /* 更精确的宽度调整，只影响主内容 */
-      width: calc(100% - 280px) !important;  /* 减去sidebar宽度 */
-      margin-left: 280px !important;  /* 为sidebar留出空间 */
-      max-width: none !important;  /* 去掉最大宽度限制 */
-    }
-    
-    #main {
-      max-width: 1600px !important;  /* 增加最大宽度 */
-      padding-left: 2em !important;  /* 增加左右内边距 */
-      padding-right: 2em !important;
-    }
-  }
-  
-  /* 4. 简单的名字左边距调整 */
+  /* 2. 左侧名字的间距调整 */
   @media (min-width: 1024px) {
     .author__name {
       padding-left: 35px !important;
     }
     
-    /* 新增：增加pronouns和联系信息之间的间距 */
+    /* 增加 pronouns 和联系信息之间的距离 */
     .author__pronouns {
-      margin-bottom: 20px !important;  /* 增加底部间距 */
-    }
-    
-    /* 或者你也可以调整联系信息的顶部间距 */
-    .author__urls-wrapper {
-      margin-top: 15px !important;  /* 增加顶部间距 */
+      margin-bottom: 25px !important;  /* 增加底部间距 */
     }
   }
   
-  /* 5. 字号调整 */
+  /* 3. 轻微增加主内容宽度 - 保守的修改 */
+  @media (min-width: 925px) {
+    #main {
+      max-width: 1400px !important;  /* 适度增加最大宽度 */
+    }
+  }
+  
+  /* 4. 字号调整 */
   .page__content p {
-    font-size: 0.9em !important;
-  }
-  
-  .page__content h1 {
-    font-size: 1.6em !important;
-  }
-  
-  .page__content h2 {
-    font-size: 1.2em !important;
+    font-size: 1.05em !important;  /* 稍微增大正文 */
   }
   
   .page__content li {
-    font-size: 0.9em !important;
+    font-size: 1.05em !important;  /* 稍微增大列表 */
   }
 </style>
 
