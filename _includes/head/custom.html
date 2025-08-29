@@ -16,44 +16,60 @@
 
 <!-- Custom CSS modifications -->
 <style>
+  /* 1. 删除顶部主题切换按钮 */
   #theme-toggle {
     display: none !important;
   }
   
+  /* 2. 确保顶部标题保持在原位置 */
+  .masthead {
+    /* 保持masthead不受影响 */
+    position: relative !important;
+  }
+  
+  .masthead__menu-item--lg {
+    /* 确保CC Homepage保持在左边 */
+    margin-right: auto !important;
+  }
+  
+  /* 3. 只增加主内容区域的宽度 */
   @media (min-width: 925px) {
     .page {
-      /* 从 span(10 of 12) 改为更宽的布局 */
-      width: 85% !important;  /* 使用更大的宽度 */
-      margin-left: 18% !important;  /* 调整左边距以适应sidebar */
+      /* 更精确的宽度调整，只影响主内容 */
+      width: calc(100% - 280px) !important;  /* 减去sidebar宽度 */
+      margin-left: 280px !important;  /* 为sidebar留出空间 */
+      max-width: none !important;  /* 去掉最大宽度限制 */
     }
     
     #main {
       max-width: 1600px !important;  /* 增加最大宽度 */
+      padding-left: 2em !important;  /* 增加左右内边距 */
+      padding-right: 2em !important;
     }
   }
   
-  /* 3. 简单的名字左边距调整 */
+  /* 4. 简单的名字左边距调整 */
   @media (min-width: 1024px) {
     .author__name {
-      padding-left: 35px !important;  /* 保持你喜欢的35px */
+      padding-left: 35px !important;
     }
   }
   
-  /* 4. 字号调整示例 - 你可以根据需要修改这些值 */
+  /* 5. 字号调整 */
   .page__content p {
-    font-size: 0.9em !important;  /* 稍微增大正文字号 */
+    font-size: 0.9em !important;
   }
   
   .page__content h1 {
-    font-size: 1.6em !important;  /* 调整h1字号 */
+    font-size: 1.6em !important;
   }
   
   .page__content h2 {
-    font-size: 1.2em !important;  /* 调整h2字号 */
+    font-size: 1.2em !important;
   }
   
   .page__content li {
-    font-size: 0.9em !important;  /* 调整列表字号 */
+    font-size: 0.9em !important;
   }
 </style>
 
