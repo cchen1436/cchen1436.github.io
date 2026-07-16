@@ -937,12 +937,8 @@ h1 {
   font-weight: 760;
 }
 
-.result-table tbody td:last-child {
+.result-panel--collaboration .result-table tbody td:last-child {
   color: var(--purple);
-}
-
-.result-panel--interaction .result-table tbody td:last-child {
-  color: var(--green);
 }
 
 .result-table strong {
