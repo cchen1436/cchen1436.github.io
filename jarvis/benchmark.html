@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="JarvisBench evaluates Agent collaboration and real-time user interaction on 34 text-only WildClawBench tasks."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="JarvisBench" />
+    <meta
+      property="og:description"
+      content="Two complementary tracks for Agent outcomes and real-time user interaction."
+    />
+    <title>JarvisBench</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="benchmark-page">
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="JARVIS home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>JARVIS</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="demos.html">Demos</a>
+        <a class="nav-current" href="benchmark.html" aria-current="page">Benchmark</a>
+      </nav>
+      <div class="online-status" aria-label="Jarvis is online">
+        <span aria-hidden="true"></span>
+        On call
+      </div>
+    </header>
+
+    <main class="benchmark-main">
+      <section class="benchmark-hero" aria-labelledby="benchmark-title">
+        <div class="benchmark-hero__copy">
+          <h1 id="benchmark-title">JarvisBench</h1>
+          <p>
+            A focused benchmark for two questions: does Jarvis help an Agent finish
+            the work, and does it keep the user meaningfully in the loop?
+          </p>
+        </div>
+
+        <figure class="benchmark-map" aria-label="JarvisBench task origin and evaluation tracks">
+          <div class="benchmark-map__node benchmark-map__source">
+            <span>Source benchmark</span>
+            <strong>WildClawBench</strong>
+            <small>60 real-world OpenClaw tasks</small>
+          </div>
+          <div class="benchmark-map__connector" aria-hidden="true"></div>
+          <div class="benchmark-map__node benchmark-map__subset">
+            <span>Selected subset</span>
+            <strong>34 text-only tasks</strong>
+            <small>Long-horizon, tool-using workflows</small>
+          </div>
+          <div class="benchmark-map__connector benchmark-map__connector--split" aria-hidden="true">
+            <span class="benchmark-map__branch benchmark-map__branch--upper"></span>
+            <span class="benchmark-map__branch benchmark-map__branch--lower"></span>
+          </div>
+          <div class="benchmark-map__tracks">
+            <a href="#agent-collaboration"><span>Track 01</span>Agent-Collaboration</a>
+            <a href="#user-interaction"><span>Track 02</span>User-Interaction</a>
+          </div>
+        </figure>
+
+        <p class="benchmark-origin">
+          JarvisBench selects the 34 text-only tasks from
+          <a href="https://github.com/internlm/WildClawBench">WildClawBench</a>,
+          spanning browser, shell, file, search, communication, scheduling, and
+          safety workflows in a live OpenClaw environment.
+        </p>
+      </section>
+
+      <section
+        class="track-page track-page--collaboration"
+        id="agent-collaboration"
+        aria-labelledby="collaboration-title"
+      >
+        <div class="track-page__intro">
+          <p class="eyebrow">TRACK 01</p>
+          <h2 id="collaboration-title">Agent-Collaboration</h2>
+          <p class="track-question">
+            Does Jarvis help the same worker Agent complete more tasks?
+          </p>
+          <p class="track-summary">
+            The original OpenClaw loop is compared with the same worker augmented by
+            Jarvis. Jarvis surfaces sparse failure checkpoints, carries expert guidance
+            back into the ongoing trajectory, and never solves the task itself.
+          </p>
+        </div>
+        <article class="result-panel result-panel--collaboration">
+          <div class="result-table-wrap">
+            <table class="result-table">
+              <thead>
+                <tr>
+                  <th scope="col">Worker model</th>
+                  <th scope="col">Without Jarvis</th>
+                  <th scope="col">With Jarvis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">GPT-5.4-mini</th>
+                  <td data-label="Without Jarvis">44.24%</td>
+                  <td data-label="With Jarvis">49.11%</td>
+                </tr>
+                <tr>
+                  <th scope="row">GPT-5.5</th>
+                  <td data-label="Without Jarvis">50.54%</td>
+                  <td data-label="With Jarvis">58.45%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gemini-3.1-Pro</th>
+                  <td data-label="Without Jarvis">43.14%</td>
+                  <td data-label="With Jarvis">54.78%</td>
+                </tr>
+                <tr>
+                  <th scope="row">Claude Opus 4.7</th>
+                  <td data-label="Without Jarvis">64.01%</td>
+                  <td data-label="With Jarvis">75.79%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <dl class="metric-notes">
+          <div><dt>Without Jarvis</dt><dd>The original OpenClaw worker loop.</dd></div>
+          <div><dt>With Jarvis</dt><dd>The same worker with Jarvis mediation.</dd></div>
+          <div><dt>Score</dt><dd>WildClaw task-completion percentage over 34 tasks.</dd></div>
+        </dl>
+      </section>
+
+      <section
+        class="track-page track-page--interaction"
+        id="user-interaction"
+        aria-labelledby="interaction-title"
+      >
+        <div class="track-page__intro">
+          <p class="eyebrow">TRACK 02</p>
+          <h2 id="interaction-title">User-Interaction</h2>
+          <p class="track-question">
+            Can Jarvis help a nonexpert in real time while the Agent keeps working?
+          </p>
+          <p class="track-summary">
+            The worker is fixed while the Jarvis brain changes. Users ask short progress
+            or task-topic questions without providing task-solving guidance.
+          </p>
+        </div>
+
+        <article class="result-panel result-panel--interaction">
+          <div class="result-table-wrap">
+            <table class="result-table result-table--interaction">
+              <thead>
+                <tr>
+                  <th scope="col">Jarvis brain</th>
+                  <th scope="col">Latency (s)</th>
+                  <th scope="col">Progress</th>
+                  <th scope="col">Topic</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Qwen3-30B-A3B-Instruct</th>
+                  <td data-label="Latency (s)"><strong>0.69</strong></td>
+                  <td data-label="Progress">3.46</td>
+                  <td data-label="Topic">2.93</td>
+                </tr>
+                <tr>
+                  <th scope="row">Qwen3-32B-Thinking</th>
+                  <td data-label="Latency (s)">2.89</td>
+                  <td data-label="Progress">3.53</td>
+                  <td data-label="Topic">3.24</td>
+                </tr>
+                <tr>
+                  <th scope="row">GPT-OSS-120B</th>
+                  <td data-label="Latency (s)">1.12</td>
+                  <td data-label="Progress"><strong>4.07</strong></td>
+                  <td data-label="Topic">3.59</td>
+                </tr>
+                <tr>
+                  <th scope="row">GPT-5.4 mini</th>
+                  <td data-label="Latency (s)">1.09</td>
+                  <td data-label="Progress">4.02</td>
+                  <td data-label="Topic">3.43</td>
+                </tr>
+                <tr>
+                  <th scope="row">GPT-5.4</th>
+                  <td data-label="Latency (s)">1.39</td>
+                  <td data-label="Progress">4.02</td>
+                  <td data-label="Topic"><strong>3.91</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <dl class="metric-notes">
+          <div><dt>Latency</dt><dd>End of user speech to start of Jarvis speech.</dd></div>
+          <div><dt>Progress</dt><dd>Average 1-5 score grounded in the current Agent trace.</dd></div>
+          <div><dt>Topic</dt><dd>Average 1-5 score consistent with the task context.</dd></div>
+        </dl>
+      </section>
+    </main>
+
+    <footer>
+      <span>JARVIS</span>
+      <p>Voice-first mediation for autonomous work.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The always-on intelligence between you and your Agent."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Just A Rather Very Intelligent Spoken Agent" />
+    <meta
+      property="og:description"
+      content="The always-on intelligence between you and your Agent."
+    />
+    <meta property="og:image" content="jarvis-system.png" />
+    <title>Just A Rather Very Intelligent Spoken Agent</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-next-page="demos.html">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="JARVIS home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>JARVIS</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class="nav-current" href="index.html" aria-current="page">Home</a>
+        <a href="demos.html">Demos</a>
+        <a href="benchmark.html">Benchmark</a>
+      </nav>
+      <div class="online-status" aria-label="Jarvis is online">
+        <span aria-hidden="true"></span>
+        On call
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Just A Rather Very Intelligent Spoken Agent</h1>
+          <div class="hero-deck">
+            <p>The always-on intelligence between you and your Agent.</p>
+            <ul class="hero-points">
+              <li>
+                <strong>Voice chat anytime.</strong>
+                Ask questions or receive proactive progress reports while the Agent works.
+              </li>
+              <li>
+                <strong>Free your eyes and hands.</strong>
+                Jarvis monitors in real time. Put on your headphones and grab a coffee.
+              </li>
+              <li>
+                <strong>Stay in command.</strong>
+                Guide the Agent through conversation. Jarvis delivers your intent at the right moment.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="system-figure" aria-label="Animated JARVIS system diagram">
+          <img
+            src="jarvis-system.png"
+            alt="A user speaks with Jarvis while Jarvis exchanges work traces and guidance with an Agent"
+          />
+
+          <div class="jarvis-beacon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="voice-wave" aria-hidden="true">
+            <div class="voice-channel voice-channel--user">
+              <span class="voice-bars">
+                <i style="--height: 34%; --delay: -0.10s"></i>
+                <i style="--height: 62%; --delay: -0.42s"></i>
+                <i style="--height: 88%; --delay: -0.26s"></i>
+                <i style="--height: 54%; --delay: -0.68s"></i>
+                <i style="--height: 100%; --delay: -0.18s"></i>
+                <i style="--height: 70%; --delay: -0.54s"></i>
+                <i style="--height: 42%; --delay: -0.34s"></i>
+                <i style="--height: 76%; --delay: -0.76s"></i>
+                <i style="--height: 30%; --delay: -0.22s"></i>
+              </span>
+            </div>
+            <div class="voice-channel voice-channel--jarvis">
+              <span class="voice-bars">
+                <i style="--height: 28%; --delay: -0.36s"></i>
+                <i style="--height: 72%; --delay: -0.12s"></i>
+                <i style="--height: 48%; --delay: -0.64s"></i>
+                <i style="--height: 92%; --delay: -0.28s"></i>
+                <i style="--height: 60%; --delay: -0.74s"></i>
+                <i style="--height: 100%; --delay: -0.46s"></i>
+                <i style="--height: 52%; --delay: -0.18s"></i>
+                <i style="--height: 80%; --delay: -0.58s"></i>
+                <i style="--height: 36%; --delay: -0.32s"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="message-lane" aria-hidden="true">
+            <i class="agent-message" style="--row: 8%; --delay: -0.2s"></i>
+            <i class="agent-message" style="--row: 39%; --delay: -1.3s"></i>
+            <i class="agent-message" style="--row: 68%; --delay: -2.4s"></i>
+            <i class="agent-message" style="--row: 22%; --delay: -3.5s"></i>
+            <span class="user-guidance">USER GUIDANCE</span>
+          </div>
+
+          <div class="on-call-badge" aria-hidden="true">
+            <i></i>
+            READY
+          </div>
+
+          <div class="system-principles" aria-label="JARVIS system principles">
+            <span><strong>User</strong> <small>stays in control</small></span>
+            <span><strong>Jarvis</strong> <small>stays on call</small></span>
+            <span><strong>Agent</strong> <small>stays on track</small></span>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="intro-section" aria-labelledby="intro-title">
+        <div class="section-heading section-heading--intro">
+          <p class="eyebrow">INTRODUCING JARVIS</p>
+          <h2 id="intro-title">Why Jarvis?</h2>
+          <p>
+            The motivation behind an always-on spoken mediator, and a brief look at
+            how Jarvis keeps people connected to long-running Agent work.
+          </p>
+        </div>
+
+        <div class="language-video">
+          <input type="radio" name="intro-language" id="intro-video-en" checked />
+          <input type="radio" name="intro-language" id="intro-video-zh" />
+
+          <div class="language-video__toolbar">
+            <span>JARVIS OVERVIEW</span>
+            <div class="language-switch" aria-label="Introduction video language">
+              <label class="language-switch__en" for="intro-video-en">English</label>
+              <label class="language-switch__zh" for="intro-video-zh">中文</label>
+            </div>
+          </div>
+
+          <div class="language-video__panel language-video__panel--en">
+            <div class="video-media video-media--intro">
+              <video controls preload="metadata" playsinline aria-label="JARVIS introduction in English">
+                <source src="intro_en.mp4" type="video/mp4" />
+                Your browser does not support HTML video.
+              </video>
+            </div>
+          </div>
+
+          <div class="language-video__panel language-video__panel--zh">
+            <div class="video-media video-media--intro">
+              <video controls preload="metadata" playsinline aria-label="JARVIS introduction in Chinese">
+                <source src="intro_zh.mp4" type="video/mp4" />
+                Your browser does not support HTML video.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>JARVIS</span>
+      <p>Voice-first mediation for autonomous work.</p>
+    </footer>
+
+    <script src="page-flow.js"></script>
+  </body>
+</html>
