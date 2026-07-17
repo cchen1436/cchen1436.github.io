@@ -1174,22 +1174,44 @@ footer p {
     padding: 24px;
   }
 
-  .benchmark-map__connector {
-    width: 1px;
-    height: 32px;
-    margin: 12px auto;
+  .benchmark-map__connector,
+  .benchmark-map__connector--split {
+    width: 2px;
+    height: 34px;
+    margin: 14px auto;
     justify-self: center;
+    display: block;
+    border-radius: 999px;
+    background: currentColor;
+    box-shadow: none;
   }
 
-  .benchmark-map__connector::after {
+  .benchmark-map__connector::before,
+  .benchmark-map__connector--split::before {
+    display: none;
+  }
+
+  .benchmark-map__connector::after,
+  .benchmark-map__connector--split::after {
+    width: 9px;
+    height: 9px;
+    display: block;
     top: auto;
-    right: -3px;
-    bottom: 0;
-    transform: rotate(135deg);
+    right: 50%;
+    bottom: -1px;
+    border: 0;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateX(50%) rotate(45deg);
+  }
+
+  .benchmark-map__branch {
+    display: none;
   }
 
   .benchmark-map__tracks {
     grid-template-columns: 1fr;
+    margin-top: 0;
   }
 
   .track-question {
