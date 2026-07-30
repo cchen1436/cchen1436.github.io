@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Collaborate on Jarvis, an ongoing research project for allocating human attention across long-horizon Agent work."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Contact · JARVIS" />
+    <meta
+      property="og:description"
+      content="An ongoing research project matching scarce human attention to one or many long-horizon Agents."
+    />
+    <title>Contact · JARVIS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="contact-page">
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="JARVIS home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>JARVIS</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="demos.html">Demos</a>
+        <a href="benchmark.html">Benchmark</a>
+        <a class="nav-current" href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <div class="online-status" aria-label="Jarvis is online">
+        <span aria-hidden="true"></span>
+        On call
+      </div>
+    </header>
+
+    <main class="contact-main">
+      <section class="contact-hero" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <h1 id="contact-title">Put human attention where it matters.</h1>
+          <p class="contact-lead">
+            Jarvis is an ongoing research project exploring how to match a user's
+            scarce attention to the work of one or many long-horizon Agents.
+          </p>
+          <p class="contact-invitation">
+            Collaboration is welcome. Please contact me by
+            <a class="contact-email" href="mailto:" aria-label="Send an email">email</a>.
+          </p>
+        </div>
+
+        <div
+          class="attention-flow"
+          role="img"
+          aria-label="Jarvis routes scarce user attention to one or many long-horizon Agents"
+        >
+          <div class="attention-flow__source">
+            <strong>You</strong>
+            <small>
+              <span>preferences</span>
+              <span>priorities</span>
+              <span>judgment</span>
+            </small>
+          </div>
+          <div
+            class="attention-flow__connector attention-flow__connector--personal"
+            aria-hidden="true"
+          >
+            <span class="flow-line flow-line--forward"><i></i></span>
+            <span class="flow-line flow-line--return"><i></i></span>
+          </div>
+          <div class="attention-flow__jarvis">
+            <span aria-hidden="true"></span>
+            <strong>JARVIS</strong>
+            <small>your personal, always-on butler</small>
+          </div>
+          <div
+            class="attention-flow__connector attention-flow__connector--branch"
+            aria-hidden="true"
+          >
+            <span class="flow-line flow-line--forward">
+              <em>GUIDANCE</em>
+              <i></i>
+            </span>
+            <span class="flow-line flow-line--return">
+              <em>TRACE</em>
+              <i></i>
+            </span>
+          </div>
+          <div class="attention-flow__agents">
+            <span><strong>Agent 01</strong><small>coding task</small></span>
+            <span><strong>Agent 02</strong><small>search task</small></span>
+            <span><strong>Agent 03</strong><small>design task</small></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>JARVIS</span>
+      <p>Voice-first mediation for autonomous work.</p>
+    </footer>
+
+    <script>
+      (() => {
+        const link = document.querySelector(".contact-email");
+        const address = [
+          99, 99, 104, 101, 110, 49, 64, 110, 118, 105, 100, 105, 97, 46, 99, 111, 109,
+        ]
+          .map((code) => String.fromCharCode(code))
+          .join("");
+
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          window.location.href = `mailto:${address}`;
+        });
+      })();
+    </script>
+  </body>
+</html>
