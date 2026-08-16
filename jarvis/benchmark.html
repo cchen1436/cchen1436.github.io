@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="JarvisBench evaluates Agent collaboration and real-time user interaction on 34 text-only WildClawBench tasks."
+      content="JarvisBench evaluates bidirectional attention coordination between users and one or more long-horizon agents."
     />
     <meta name="theme-color" content="#ffffff" />
     <meta property="og:title" content="JarvisBench" />
     <meta
       property="og:description"
-      content="Two complementary tracks for Agent outcomes and real-time user interaction."
+      content="A benchmark for allocating scarce human attention across long-horizon agent work."
     />
     <title>JarvisBench</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="benchmark.css" />
   </head>
   <body class="benchmark-page" data-next-page="contact.html">
     <header class="site-header">
@@ -35,183 +36,274 @@
     </header>
 
     <main class="benchmark-main">
-      <section class="benchmark-hero" aria-labelledby="benchmark-title">
-        <div class="benchmark-hero__copy">
-          <h1 id="benchmark-title">JarvisBench</h1>
+      <section class="bench-hero" aria-labelledby="benchmark-title">
+        <div class="bench-hero__copy">
+          <p class="eyebrow">JARVISBENCH</p>
+          <h1 id="benchmark-title">Benchmarking where human attention matters.</h1>
+          <p class="bench-lead">
+            Long-horizon agents can work continuously. Human attention is intermittent
+            and scarce. JarvisBench measures whether an always-on intermediary can
+            coordinate both sides without changing the agents underneath.
+          </p>
+          <div class="bench-links" aria-label="Benchmark links">
+            <a href="https://github.com/cchen1436/JarvisBench">Code <span aria-hidden="true">↗</span></a>
+            <a href="#results">See results <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <dl class="bench-stats" aria-label="JarvisBench at a glance">
+          <div><dt>45</dt><dd>agentic task instances</dd></div>
+          <div><dt>20</dt><dd>single-agent tasks</dd></div>
+          <div><dt>10</dt><dd>multi-agent projects</dd></div>
+          <div><dt>19</dt><dd>distinct domains</dd></div>
+          <div><dt>2K+</dt><dd>public candidates reviewed</dd></div>
+        </dl>
+      </section>
+
+      <section class="bench-premise" aria-labelledby="premise-title">
+        <div class="bench-section-heading">
+          <p class="eyebrow">THE COORDINATION PROBLEM</p>
+          <h2 id="premise-title">Execution is continuous. Attention is not.</h2>
           <p>
-            A focused benchmark for two questions: does Jarvis help an Agent finish
-            the work, and does it keep the user meaningfully in the loop?
+            JarvisBench separates task execution from attention coordination. Agents do
+            the work; the user owns judgment; Jarvis decides when information should move
+            between them.
           </p>
         </div>
 
-        <figure class="benchmark-map" aria-label="JarvisBench task origin and evaluation tracks">
-          <div class="benchmark-map__node benchmark-map__source">
-            <span>Source benchmark</span>
-            <strong>WildClawBench</strong>
-            <small>60 real-world OpenClaw tasks</small>
+        <div class="coordination-model" aria-label="User, Jarvis, and working-agent roles">
+          <article class="coordination-role coordination-role--user">
+            <span>USER</span>
+            <strong>Owns judgment</strong>
+            <p>Intent, preferences, authority, private context, and acceptance.</p>
+          </article>
+          <div class="coordination-link coordination-link--speech" aria-hidden="true">
+            <span>asks &amp; decides</span>
           </div>
-          <div class="benchmark-map__connector" aria-hidden="true"></div>
-          <div class="benchmark-map__node benchmark-map__subset">
-            <span>Selected subset</span>
-            <strong>34 text-only tasks</strong>
-            <small>Long-horizon, tool-using workflows</small>
+          <article class="coordination-role coordination-role--jarvis">
+            <span>JARVIS</span>
+            <strong>Coordinates attention</strong>
+            <p>Answers the user, observes bounded events, and routes scoped guidance.</p>
+          </article>
+          <div class="coordination-link coordination-link--trace" aria-hidden="true">
+            <span>events &amp; guidance</span>
           </div>
-          <div class="benchmark-map__connector benchmark-map__connector--split" aria-hidden="true">
-            <span class="benchmark-map__branch benchmark-map__branch--upper"></span>
-            <span class="benchmark-map__branch benchmark-map__branch--lower"></span>
-          </div>
-          <div class="benchmark-map__tracks">
-            <a href="#agent-collaboration"><span>Track 01</span>Agent-Collaboration</a>
-            <a href="#user-interaction"><span>Track 02</span>User-Interaction</a>
-          </div>
-        </figure>
+          <article class="coordination-role coordination-role--agents">
+            <span>AGENTS</span>
+            <strong>Execute the work</strong>
+            <p>Plan, use tools, produce artifacts, and continue in their native runtime.</p>
+          </article>
+        </div>
 
-        <p class="benchmark-origin">
-          JarvisBench selects the 34 text-only tasks from
-          <a href="https://github.com/internlm/WildClawBench">WildClawBench</a>,
-          spanning browser, shell, file, search, communication, scheduling, and
-          safety workflows in a live OpenClaw environment. During execution, GPT
-          serves as an online user simulator with two personas: an expert who
-          provides guidance in the Agent-Collaboration track and a nonexpert who
-          seeks frequent interaction in the User-Interaction track.
-        </p>
+        <div class="coordination-directions">
+          <div>
+            <span>USER → JARVIS</span>
+            <strong>Reach ongoing work at any moment.</strong>
+            <p>Ask about progress or provide guidance while the worker keeps running.</p>
+          </div>
+          <div>
+            <span>AGENT → JARVIS → USER</span>
+            <strong>Bring judgment in before it is too late.</strong>
+            <p>Surface one consequential decision when the unfolding work makes it concrete.</p>
+          </div>
+        </div>
       </section>
 
-      <section
-        class="track-page track-page--collaboration"
-        id="agent-collaboration"
-        aria-labelledby="collaboration-title"
-      >
-        <div class="track-page__intro">
-          <p class="eyebrow">TRACK 01</p>
-          <h2 id="collaboration-title">Agent-Collaboration</h2>
-          <p class="track-question">
-            Does Jarvis help the same worker Agent complete more tasks?
-          </p>
-          <p class="track-summary">
-            The original OpenClaw loop is compared with the same worker augmented by
-            Jarvis. Jarvis surfaces sparse failure checkpoints, carries expert guidance
-            back into the ongoing trajectory, and never solves the task itself.
+      <section class="bench-suite" aria-labelledby="suite-title">
+        <div class="bench-section-heading">
+          <p class="eyebrow">THE TASK SUITE</p>
+          <h2 id="suite-title">The need for attention emerges during execution.</h2>
+          <p>
+            Every episode contains enough public information for substantial work to
+            begin. The benchmark does not manufacture interaction by leaving an obvious
+            hole in the initial request. A user-owned decision becomes relevant only after
+            the agents expose a real tradeoff, anomaly, authorization boundary, or
+            acceptance judgment.
           </p>
         </div>
-        <article class="result-panel result-panel--collaboration">
+
+        <div class="topology-grid">
+          <article class="topology topology--single">
+            <div class="topology__number">20</div>
+            <div>
+              <p class="eyebrow">SINGLE-AGENT</p>
+              <h3>One trajectory, one emerging decision.</h3>
+              <p>
+                Multi-step tasks across 15 domains and seven forms of attention need.
+                Jarvis may pause at an action boundary, cancel the pending action, inject
+                scoped soft guidance, and continue without discarding completed work.
+              </p>
+            </div>
+          </article>
+
+          <article class="topology topology--multi">
+            <div class="topology__number">25</div>
+            <div>
+              <p class="eyebrow">WORKSTREAMS · 10 PROJECTS</p>
+              <h3>Parallel evidence, one shared judgment.</h3>
+              <p>
+                Five projects contain two workstreams and five contain three. The streams
+                contribute to one coupled outcome, exposing a project-level decision that
+                no worker can resolve from its local view alone.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <ol class="attention-boundary" aria-label="JarvisBench episode flow">
+          <li><span>01</span><strong>Work begins</strong><small>The prompt is actionable.</small></li>
+          <li><span>02</span><strong>Evidence unfolds</strong><small>Agents make objective progress.</small></li>
+          <li><span>03</span><strong>A decision matures</strong><small>User judgment changes the outcome.</small></li>
+          <li><span>04</span><strong>Guidance returns</strong><small>Execution resumes with minimal disruption.</small></li>
+        </ol>
+      </section>
+
+      <section class="bench-tracks" aria-labelledby="tracks-title">
+        <div class="bench-section-heading">
+          <p class="eyebrow">TWO DIRECTIONS, TWO TRACKS</p>
+          <h2 id="tracks-title">Outcome improvement and user access stay separate.</h2>
+          <p>
+            JarvisBench does not collapse the two directions into one score. One track
+            asks whether attention improves the work; the other asks whether Jarvis is
+            useful whenever the user reaches out.
+          </p>
+        </div>
+
+        <article class="track-band track-band--collaboration" id="agent-collaboration">
+          <div class="track-band__title">
+            <span>TRACK 01 · AGENT → USER</span>
+            <h3>Agent-Collaboration</h3>
+            <p>Was human attention used effectively?</p>
+          </div>
+          <div class="track-band__body">
+            <p>
+              The same worker, OpenClaw harness, prompt, tools, and environment run with
+              and without Jarvis. The worker remains frozen; only the external attention
+              layer changes.
+            </p>
+            <dl>
+              <div><dt>Outcome</dt><dd>Weighted task score on a 0–100 scale.</dd></div>
+              <div><dt>Requests</dt><dd>User-attention turns requested per task.</dd></div>
+              <div><dt>Efficiency</dt><dd>Fraction of the full score gained per requested turn.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="track-band track-band--interaction" id="user-interaction">
+          <div class="track-band__title">
+            <span>TRACK 02 · USER → AGENT</span>
+            <h3>User-Interaction</h3>
+            <p>Was Jarvis useful when the user reached out?</p>
+          </div>
+          <div class="track-band__body">
+            <p>
+              Recorded trajectories are replayed causally at early and late checkpoints.
+              Jarvis answers a fixed progress question and a conversation-grounded
+              follow-up using only the state visible at that moment.
+            </p>
+            <dl>
+              <div><dt>General</dt><dd>Direct progress answer grounded in current state.</dd></div>
+              <div><dt>Follow-up</dt><dd>Contextual answer to the user's next question.</dd></div>
+              <div><dt>Latency</dt><dd>End of user speech to first audible output.</dd></div>
+            </dl>
+          </div>
+        </article>
+      </section>
+
+      <section class="bench-results" id="results" aria-labelledby="results-title">
+        <div class="bench-section-heading">
+          <p class="eyebrow">RESULTS</p>
+          <h2 id="results-title">The attention layer transfers across workers.</h2>
+          <p>
+            With GPT-5.6-Sol as Jarvis, every completed worker configuration improves
+            without changing the underlying agent loop. The size and attention cost of
+            the gain still depend strongly on both the worker and the Jarvis brain.
+          </p>
+        </div>
+
+        <dl class="result-highlights">
+          <div><dt>+24.7</dt><dd>best single-agent gain</dd></div>
+          <div><dt>+28.2</dt><dd>best multi-agent gain</dd></div>
+          <div><dt>96.3</dt><dd>top user-interaction score</dd></div>
+        </dl>
+
+        <article class="result-panel result-panel--outcomes">
+          <div class="result-panel__heading">
+            <div>
+              <span>FIXED JARVIS BRAIN · GPT-5.6-SOL</span>
+              <h3>Worker-agent compatibility</h3>
+            </div>
+            <p>Task Outcome Score · higher is better</p>
+          </div>
           <div class="result-table-wrap">
-            <table class="result-table">
+            <table class="result-table outcome-table">
               <thead>
                 <tr>
-                  <th scope="col">Worker model</th>
-                  <th scope="col">Without Jarvis</th>
-                  <th scope="col">With Jarvis</th>
+                  <th rowspan="2" scope="col">Worker agent</th>
+                  <th colspan="3" scope="colgroup">Single-Agent</th>
+                  <th colspan="3" scope="colgroup">Multi-Agent</th>
+                </tr>
+                <tr>
+                  <th scope="col">Base</th><th scope="col">Jarvis</th><th scope="col">Gain</th>
+                  <th scope="col">Base</th><th scope="col">Jarvis</th><th scope="col">Gain</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">GPT-5.4-mini</th>
-                  <td data-label="Without Jarvis">44.24%</td>
-                  <td data-label="With Jarvis">49.11%</td>
-                </tr>
-                <tr>
-                  <th scope="row">GPT-5.5</th>
-                  <td data-label="Without Jarvis">50.54%</td>
-                  <td data-label="With Jarvis">58.45%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Gemini-3.1-Pro</th>
-                  <td data-label="Without Jarvis">43.14%</td>
-                  <td data-label="With Jarvis">54.78%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Claude Opus 4.7</th>
-                  <td data-label="Without Jarvis">64.01%</td>
-                  <td data-label="With Jarvis">75.79%</td>
-                </tr>
+                <tr><th scope="row">Claude Opus 5.0</th><td>58.1</td><td>77.7</td><td class="gain">+19.6</td><td>55.2</td><td>78.6</td><td class="gain">+23.4</td></tr>
+                <tr><th scope="row">Claude Opus 4.8</th><td>59.0</td><td>83.1</td><td class="gain">+24.1</td><td>52.6</td><td>80.8</td><td class="gain">+28.2</td></tr>
+                <tr><th scope="row">GPT-5.6-Sol</th><td>57.2</td><td>62.1</td><td class="gain">+4.9</td><td>51.6</td><td>—</td><td>—</td></tr>
+                <tr><th scope="row">GPT-5.5</th><td>55.1</td><td>67.1</td><td class="gain">+12.0</td><td>52.9</td><td>65.4</td><td class="gain">+12.5</td></tr>
+                <tr><th scope="row">DeepSeek V4-Pro</th><td>51.6</td><td>76.3</td><td class="gain">+24.7</td><td>53.3</td><td>69.4</td><td class="gain">+16.1</td></tr>
+                <tr><th scope="row">GLM 5.2</th><td>51.0</td><td>75.6</td><td class="gain">+24.6</td><td>52.8</td><td>75.3</td><td class="gain">+22.5</td></tr>
               </tbody>
             </table>
           </div>
         </article>
 
-        <dl class="metric-notes">
-          <div><dt>Without Jarvis</dt><dd>The original OpenClaw worker loop.</dd></div>
-          <div><dt>With Jarvis</dt><dd>The same worker with Jarvis mediation.</dd></div>
-          <div><dt>Score</dt><dd>WildClaw task-completion percentage over 34 tasks.</dd></div>
-        </dl>
-      </section>
+        <div class="results-lower">
+          <article class="result-panel result-panel--interaction">
+            <div class="result-panel__heading">
+              <div>
+                <span>USER-INTERACTION TRACK</span>
+                <h3>Jarvis brain comparison</h3>
+              </div>
+              <p>Overall score · latency to first audio</p>
+            </div>
+            <div class="result-table-wrap">
+              <table class="result-table interaction-table">
+                <thead><tr><th scope="col">Jarvis brain</th><th scope="col">Overall</th><th scope="col">Latency</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">GPT-5.6-Sol</th><td><strong>96.3</strong></td><td>1.8s</td></tr>
+                  <tr><th scope="row">Claude Opus 4.8</th><td>90.8</td><td>2.1s</td></tr>
+                  <tr><th scope="row">DeepSeek V4-Pro</th><td>85.8</td><td>2.0s</td></tr>
+                  <tr><th scope="row">Qwen235B</th><td>82.5</td><td>1.6s</td></tr>
+                  <tr><th scope="row">GPT-OSS-120B</th><td>84.6</td><td><strong>1.3s</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
 
-      <section
-        class="track-page track-page--interaction"
-        id="user-interaction"
-        aria-labelledby="interaction-title"
-      >
-        <div class="track-page__intro">
-          <p class="eyebrow">TRACK 02</p>
-          <h2 id="interaction-title">User-Interaction</h2>
-          <p class="track-question">
-            Can Jarvis help a nonexpert in real time while the Agent keeps working?
-          </p>
-          <p class="track-summary">
-            The worker is fixed while the Jarvis brain changes. Users ask short progress
-            or task-topic questions without providing task-solving guidance.
-          </p>
+          <aside class="result-insight">
+            <p class="eyebrow">WHAT THE NUMBERS SAY</p>
+            <h3>Better outcomes are not the whole objective.</h3>
+            <p>
+              GPT-5.6-Sol produces the largest task gains and the strongest user-facing
+              score. DeepSeek V4-Pro is the most attention-efficient multi-agent mediator
+              in the Jarvis-brain sweep, reaching 0.41 efficiency with 0.30 requests per
+              project.
+            </p>
+            <p>
+              Latency reflects each end-to-end speech configuration and API condition;
+              it is not an intrinsic model-speed ranking.
+            </p>
+          </aside>
         </div>
-
-        <article class="result-panel result-panel--interaction">
-          <div class="result-table-wrap">
-            <table class="result-table result-table--interaction">
-              <thead>
-                <tr>
-                  <th scope="col">Jarvis brain</th>
-                  <th scope="col">Latency (s)</th>
-                  <th scope="col">Progress</th>
-                  <th scope="col">Topic</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Qwen3-30B-A3B-Instruct</th>
-                  <td data-label="Latency (s)"><strong>0.69</strong></td>
-                  <td data-label="Progress">3.46</td>
-                  <td data-label="Topic">2.93</td>
-                </tr>
-                <tr>
-                  <th scope="row">Qwen3-32B-Thinking</th>
-                  <td data-label="Latency (s)">2.89</td>
-                  <td data-label="Progress">3.53</td>
-                  <td data-label="Topic">3.24</td>
-                </tr>
-                <tr>
-                  <th scope="row">GPT-OSS-120B</th>
-                  <td data-label="Latency (s)">1.12</td>
-                  <td data-label="Progress"><strong>4.07</strong></td>
-                  <td data-label="Topic">3.59</td>
-                </tr>
-                <tr>
-                  <th scope="row">GPT-5.4 mini</th>
-                  <td data-label="Latency (s)">1.09</td>
-                  <td data-label="Progress">4.02</td>
-                  <td data-label="Topic">3.43</td>
-                </tr>
-                <tr>
-                  <th scope="row">GPT-5.4</th>
-                  <td data-label="Latency (s)">1.39</td>
-                  <td data-label="Progress">4.02</td>
-                  <td data-label="Topic"><strong>3.91</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <dl class="metric-notes">
-          <div><dt>Latency</dt><dd>End of user speech to start of Jarvis speech.</dd></div>
-          <div><dt>Progress</dt><dd>Average 1-5 score grounded in the current Agent trace.</dd></div>
-          <div><dt>Topic</dt><dd>Average 1-5 score consistent with the task context.</dd></div>
-        </dl>
       </section>
     </main>
 
     <footer>
-      <span>JARVIS</span>
-      <p>Voice-first mediation for autonomous work.</p>
+      <span>JARVISBENCH</span>
+      <p>Bidirectional attention coordination for long-horizon agents.</p>
     </footer>
     <script src="page-flow.js"></script>
   </body>
